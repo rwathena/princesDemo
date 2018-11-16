@@ -1,5 +1,9 @@
+package com.rwathena.prince;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @ Version:     1.0
  */
 @RestController
-@EnableAutoConfiguration
+@EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
+@SpringBootApplication
 public class PrinceStartApplication {
 
     public static void main(String[] args) throws Exception {
