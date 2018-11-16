@@ -1,0 +1,13 @@
+#interconn:
+#  project: hsi-framework
+#  app: hsi-framework
+
+mybatis:
+  check-config-location: true
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mappers/**/*Mapper.xml
+  type-aliases-package: com.haier.hsi.framework
+  pagination:
+    pageSqlRegular: .*query.*
+    dialect: sqlserver
+

@@ -1,0 +1,10 @@
+server:
+  port: 8090
+
+spring:
+  profiles:
+    active: test
+  application:
+    name: prince-web
+  freemarker:
+    checkTemplateLocation: false
