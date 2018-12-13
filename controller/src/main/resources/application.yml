@@ -1,11 +1,10 @@
 server:
-  port: 8090
+  port: 8091
 
 spring:
   profiles:
     active: test
   application:
-    name: prince-service
+    name: prince-web
   freemarker:
     checkTemplateLocation: false
-

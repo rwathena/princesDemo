@@ -1,6 +1,6 @@
-#interconn:
-#  project: hsi-framework
-#  app: hsi-framework
+interconn:
+  project: prince-service
+  app: prince-service
 
 mybatis:
   check-config-location: true
@@ -11,3 +11,37 @@ mybatis:
     pageSqlRegular: .*query.*
     dialect: sqlserver
 
+#网络
+network:
+  datasource:
+    url: jdbc:sqlserver://10.135.26.136:1433;DatabaseName=HsiRenRenMasterUAT_MSCRM
+    username: appadmin
+    password: Haier@136
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    spring.dubbo.application.name=dubbo_server
+#    spring.dubbo.registry.address=zookeeper://127.0.0.1:2181
+#    spring.dubbo.protocol.name=dubbo
+#    spring.dubbo.protocol.port=20880
+#    spring.dubbo.scan=com.rwathena.prince.service
+#dubbo:
+#  application:
+#    name: princeRegistry
+#  registry:
+#    address: zookeeper://127.0.0.1:2181
+#  protocol:
+#    port: 20851
+#    name: dubbo
+#  timeout: 10000
+#  threads: 200
+#  heartBeats: 10000
+#  scan: com.rwathena.prince.service.*
+
+dubbo:
+#  #registry: 10.135.26.134:2188,10.135.26.135:2188,10.135.26.135:2189
+  application:
+    name: provider
+  registry: zookeeper://127.0.0.1:2181
+  port: 20879
+  timeout: 10000
+  threads: 100
+  heartBeats: 10000
