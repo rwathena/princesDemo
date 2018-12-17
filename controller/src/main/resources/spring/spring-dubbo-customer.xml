@@ -9,4 +9,5 @@
     <dubbo:application name="prince-consumer" owner="programmer" organization="dubbox"/>
     <dubbo:registry address="zookeeper://localhost:2181"/>
     <dubbo:reference id="commonService" interface="com.rwathena.prince.service.ICommonService"/>
+    <dubbo:reference id="userService" interface="com.rwathena.prince.service.IUserService"/>
 </beans>

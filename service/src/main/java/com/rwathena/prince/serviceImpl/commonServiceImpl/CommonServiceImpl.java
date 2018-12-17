@@ -1,7 +1,7 @@
 package com.rwathena.prince.serviceImpl.commonServiceImpl;
 
-import com.rwathena.prince.serviceImpl.dao.ICommonDao;
 import com.rwathena.prince.service.ICommonService;
+import com.rwathena.prince.serviceImpl.dao.common.ICommonDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

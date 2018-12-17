@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rwathena.prince.serviceImpl.dao.userCenter.IUserDao">
+
+    <sql id="selectId">
+        t_sys_user.ID,
+        t_sys_user.USER_CODE,
+        t_sys_user.PASSWORD,
+        t_sys_user.LOGIN_NAME,
+        t_sys_user.FULL_NAME,
+        t_sys_user.EMPLOYEE_POSITION,
+        t_sys_user.GENDER,
+        t_sys_user.DEPART_CODE,
+        t_sys_user.DEPART_NAME,
+        t_sys_user.USER_FIRST_LINE_ID,
+        t_sys_user.USER_SECOND_LINE_ID,
+        t_sys_user.EMAIL,
+        t_sys_user.PHONE,
+        t_sys_user.MOBILE,
+        t_sys_user.USER_TYPE,
+        t_sys_user.USERSTATE,
+        t_sys_user.IS_PHONELOGIN,
+        t_sys_user.LOGIN_IP,
+        t_sys_user.LOGIN_DATE,
+        t_sys_user.LOGIN_FLAG,
+        t_sys_user.ARCHIVE_BASE_DATE,
+        t_sys_user.CREATED_BY,
+        t_sys_user.CREATION_DATE,
+        t_sys_user.LAST_UPDATED_BY,
+        t_sys_user.LAST_UPDATE_DATE,
+        t_sys_user.RECORD_VERSION,
+        t_sys_user.DELETED_FLAG,
+        t_sys_user.DELETED_BY,
+        t_sys_user.DELETION_DATE,
+        t_sys_user.HEAD_PORTRAIT,
+        t_sys_user.CRM_USER_NAME,
+        t_sys_user.CRM_PASSWORD,
+        t_sys_user.PHONE_ID,
+        t_sys_user.ORG_LEVEL,
+        t_sys_user.ORG_CODE,
+        t_sys_user.SOURCE_KEY,
+        t_sys_user.SOURCE_ID,
+        t_sys_user.ATTRIBUTE1 ,
+        t_sys_user.ATTRIBUTE2 ,
+        t_sys_user.ATTRIBUTE3 ,
+        t_sys_user.ATTRIBUTE4 ,
+        t_sys_user.ATTRIBUTE5,
+        t_sys_user.EDIT_PASSWORD_DATE
+    </sql>
+
+    <sql id="readTb">
+        t_sys_user with(nolock)
+    </sql>
+
+    <select id="findByLoginName" resultType="com.rwathena.prince.user.TSysUser">
+        select top 1 *
+        from t_sys_user
+        where
+            DELETED_FLAG = 0 and LOGIN_NAME= 'HR130612'
+    </select>
+</mapper>

@@ -1,4 +1,4 @@
-package com.rwathena.prince.serviceImpl.dao;
+package com.rwathena.prince.serviceImpl.dao.common;
 
 import org.apache.ibatis.annotations.Mapper;
 

@@ -16,7 +16,7 @@ import org.springframework.context.annotation.ImportResource;
 @EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
 @SpringBootApplication
 @ImportResource("classpath:/spring/spring-dubbo-provider.xml")
-@DubboComponentScan("com.rwathena.prince.service")
+//@DubboComponentScan("com.rwathena.prince.service")
 public class PrinceStartApplication {
 
     public static void main(String[] args) throws Exception {

@@ -14,4 +14,5 @@
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20880" />
     <dubbo:service interface="com.rwathena.prince.service.ICommonService" ref="commonService"/>
+    <dubbo:service interface="com.rwathena.prince.service.IUserService" ref="userService"/>
 </beans>

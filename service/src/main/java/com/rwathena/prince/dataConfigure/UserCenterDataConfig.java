@@ -16,33 +16,31 @@ import javax.sql.DataSource;
 
 /**
  * @ Author:     prince.
- * @ Date：      Created in 3:38 PM 12/12/2018
+ * @ Date：      Created in 3:39 PM 12/13/2018
  * @ Description:
  * @ Version:     1.0
  */
 @Configuration
-@MapperScan(basePackages = {"com.rwathena.prince.serviceImpl.dao.common"},
-        sqlSessionFactoryRef = "dataSqlSessionFactory")
-public class DataSourceConfig {
-
+@MapperScan(basePackages = {"com.rwathena.prince.serviceImpl.dao.userCenter"},
+        sqlSessionFactoryRef = "dataUserSqlSessionFactory")
+public class UserCenterDataConfig {
     /** Field description */
-    static final String MAPPER_LOCATION = "classpath:mybatis/mappers/common/*.xml";
+    static final String MAPPER_LOCATION = "classpath:mybatis/mappers/user/*.xml";
 
     /** Field description */
     static final String MAPPER_CONFIG = "classpath:mybatis/mybatis-config.xml";
 
-    @Value("${network.datasource.url}")
+    @Value("${usercenter.datasource.url}")
     private String      url;
-    @Value("${network.datasource.username}")
+    @Value("${usercenter.datasource.username}")
     private String      user;
-    @Value("${network.datasource.password}")
+    @Value("${usercenter.datasource.password}")
     private String      password;
-    @Value("${network.datasource.driverClassName}")
+    @Value("${usercenter.datasource.driverClassName}")
     private String      driverClass;
 
-    @Bean(name = "dataSource")
-    @Primary
-    public DataSource dataSource() {
+    @Bean(name = "userCenterDataSource")
+    public DataSource userCenterDataSource() {
         DruidDataSource dataSource = new DruidDataSource();
 
         dataSource.setDriverClassName(driverClass);
@@ -53,14 +51,12 @@ public class DataSourceConfig {
         return dataSource;
     }
 
-    @Bean(name = "dataTransactionManager")
-    @Primary
-    public DataSourceTransactionManager dataTransactionManager() {
-        return new DataSourceTransactionManager(dataSource());
+    @Bean(name = "userCenterDataSqlSessionFactory")
+    public DataSourceTransactionManager userCenterDataSqlSessionFactory() {
+        return new DataSourceTransactionManager(userCenterDataSource());
     }
-    @Bean(name = "dataSqlSessionFactory")
-    @Primary
-    public SqlSessionFactory dataSourceSqlSessionFactory(@Qualifier("dataSource") DataSource dataSource)
+    @Bean(name = "dataUserSqlSessionFactory")
+    public SqlSessionFactory dataUserSqlSessionFactory(@Qualifier("userCenterDataSource") DataSource dataSource)
             throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
 

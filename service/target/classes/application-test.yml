@@ -35,6 +35,13 @@ network:
 #  threads: 200
 #  heartBeats: 10000
 #  scan: com.rwathena.prince.service.*
+#UserCenter
+usercenter:
+  datasource:
+    url: jdbc:sqlserver://10.135.26.139:1433;DatabaseName=HSI
+    username: appadmin
+    password: Haier@139
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
 dubbo:
 #  #registry: 10.135.26.134:2188,10.135.26.135:2188,10.135.26.135:2189
