@@ -56,6 +56,6 @@
         select top 1 *
         from t_sys_user
         where
-            DELETED_FLAG = 0 and LOGIN_NAME= 'HR130612'
+            DELETED_FLAG = 0 and LOGIN_NAME= #{param}
     </select>
 </mapper>

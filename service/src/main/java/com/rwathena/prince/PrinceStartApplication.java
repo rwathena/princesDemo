@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ImportResource;
  * @ Description:
  * @ Version:     1.0
  */
-@EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
+//@EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
 @SpringBootApplication
 @ImportResource("classpath:/spring/spring-dubbo-provider.xml")
 //@DubboComponentScan("com.rwathena.prince.service")
